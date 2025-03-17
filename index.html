@@ -5,16 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="/stlye.css">
-    <script src="/db.js"></script>
-    <script src="/script.js"></script>
-    <script src="/template.js"></script>
+    <script src="./db.js"></script>
+    <script src="./script.js"></script>
+    <script src="./template.js"></script>
 
     <title>Selbst Test</title>
 </head>
 <body onload="init()">
-    <h1>Teste des Selbstbefinden</h1>
+    <nav class="navBar">
+        <span>Teste den Wohlbefinden!</span>
+    </nav>
 
-    <div class="content" id="content"></div>
-    
+    <div class="container">
+
+        <div class="card testCard">
+            <div class="imgArea"></div>
+        </div>
+
+        <div class="progress">
+            <div class="progBar" role="progessbar" style="width: 25%;" id="progBar"></div>
+        </div>
+
+        <div class="cardBody endscreen" id="endscreen" style="display: none;">
+            <b class="endNote">Test beendet</b>
+
+            <div class="howMany"></div>
+        </div>
+
+        <div class="cardBody" id="questionBody">
+            <div class="cardBody">
+                <h5 class="cardTitel" id="question"></h5>
+            </div>
+
+            <div class="card answer" onclick="answer('answer_1')" disabled></div>
+            <div class="card answer" onclick="answer('answer_2')" disabled></div>
+            <div class="card answer" onclick="answer('answer_3')" disabled></div>
+        </div>
+
+        <div class="questionFooter">
+            <span>
+                <b id="questionNumber">1</b> VON <b id="questionTotal">FRAGEN</b>
+            </span>
+            <button type="button" onclick="next()" class="btn" id="next" disabled>Nächste Frage</button>
+        </div>
+
+    </div>
+
 </body>
 </html>

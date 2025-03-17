@@ -1,4 +1,4 @@
-let data = [
+let questions = [
     {
         "headline": "Selbstwert und Gelassenheit",
         "question": "Kann ich auf Anheib 5 positive Eigenschaften von mir aufzählen?",
