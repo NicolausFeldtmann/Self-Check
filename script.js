@@ -7,19 +7,12 @@ function init() {
 }
 
 function showQuestion() {
-    if (endTest()) {
-        showEndScreen();
-    } else {
-        renderQuestions();
+    //if (endTest()) {
+    //    showEndScreen();
+    //} else {
+        renderQuestion();
         clacuclateProgress();
-    }
-}
-
-return currentQuestion.length >= questions.length;
-
-function selectAnswer(selection) {
-    let question = questions[currentQuestion];
-    let selectQuestNumber = selection.slice(-1);
+    //}
 }
 
 function nextQuestion() {
@@ -36,13 +29,13 @@ function resetAnswers() {
     document.getElementById('answer_3').classList.remove('chosen');
 }
 
-function renderQuestions() {
+function renderQuestion() {
     let question = questions[currentQuestion];
     document.getElementById('questionNumber').innerHTML = currentQuestion + 1;
     document.getElementById('question').innerHTML = question['question'];
-    document.getElementById('answer_1').innerHTML = question['answer_1'];
-    document.getElementById('answer_2').innerHTML = question['answer_2'];
-    document.getElementById('answer_3').innerHTML = question['answer_3'];
+    document.getElementById('answer_1').innerHTML = question['answer1']; 
+    document.getElementById('answer_2').innerHTML = question['answer2']; 
+    document.getElementById('answer_3').innerHTML = question['answer3']; 
 }
 
 function  clacuclateProgress() {
@@ -50,4 +43,21 @@ function  clacuclateProgress() {
     percent = percent.toFixed(0);
     document.getElementById('progBar').innerHTML = percent + '%';
     document.getElementById('progBar').style = `width: ${percent}%`;
+}
+
+function answer() {
+    let question = questions[currentQuestion];
+    let selectedQuestionNumber = selection.slice(-1);
+    if (selectedQuestionNumber == 'answer_1') {
+        let point = 3;
+        score.push(point);
+        console.log(score);
+    } else if (selectedQuestionNumber == 'answer_2') {
+        let point = 2;
+        score.push(point);
+        console.log(score);
+    } else if (selectedQuestionNumber == 'answer_3') {
+        let point = 1;
+        score.push(point);
+    }
 }

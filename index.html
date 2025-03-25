@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="/stlye.css">
     <script src="./db.js"></script>
     <script src="./script.js"></script>
-    <script src="./template.js"></script>
 
     <title>Selbst Test</title>
 </head>
@@ -37,16 +36,16 @@
                 <h5 class="cardTitel" id="question"></h5>
             </div>
 
-            <div class="card answer" onclick="answer('answer_1')" disabled></div>
-            <div class="card answer" onclick="answer('answer_2')" disabled></div>
-            <div class="card answer" onclick="answer('answer_3')" disabled></div>
+            <div class="card answer" id="answer_1" onclick="answer('answer_1')" disabled></div>
+            <div class="card answer" id="answer_2" onclick="answer('answer_2')" disabled></div>
+            <div class="card answer" id="answer_3" onclick="answer('answer_3')" disabled></div>
         </div>
 
         <div class="questionFooter">
             <span>
                 <b id="questionNumber">1</b> VON <b id="questionTotal">FRAGEN</b>
             </span>
-            <button type="button" onclick="next()" class="btn" id="next" disabled>Nächste Frage</button>
+            <button type="button" onclick="nextQuestion()" class="btn" id="next" disabled>Nächste Frage</button>
         </div>
 
     </div>
